@@ -1,30 +1,33 @@
 <script lang="ts">
-	export let name: string = 'Derrick'
+  import Tabs from './Tabs.svelte'
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+  <div class='contentCont'>
+    <Tabs />
+	  <div class='pageWindow'></div>
+  </div>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  main {
+    border: 1px dashed black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+  .contentCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  .pageWindow {
+    height: 600px;
+    width: 700px;
+    border: 1px dashed purple;
+  }
 </style>
