@@ -1,29 +1,35 @@
 <script lang="ts">
-  import { lightDarkTheme } from './stores/lightDarkTheme'
+  import { colorTheme } from './stores/colorTheme'
+  import ThemeButton from './ThemeChanger.svelte'
+  import { AboutMe, Contact, Projects } from './pages'
   import Tabs from './Tabs.svelte'
+
+  let activeTab = 'about'
+
+  const setActive = (arg: string) => activeTab = arg
 </script>
 
-<main class:dark="{ $lightDarkTheme === 'dark' }">
-  <div class='themeButtonCont'>
-    <button on:click={lightDarkTheme.light}>
-      Light
-    </button> 
-    <button on:click={lightDarkTheme.dark}>
-      Dark
-    </button>
-  </div>
+
+<main class:dark="{ $colorTheme === 'dark' }">
+  <ThemeButton theme={colorTheme} />
   <div class='contentCont'>
-    <Tabs />
-	  <div class='pageWindow'>
-    <h2>the theme is {$lightDarkTheme}</h2>
+    <Tabs {...{activeTab,setActive}} />
+     <div class='pageWindow'>
+      active tab is {activeTab}
+      {#if activeTab === 'projects'}
+        <Projects />
+      {:else if activeTab === 'contact'}
+        <Contact />
+      {:else }
+        <AboutMe />
+      {/if}
     </div>
   </div>
 </main>
 
-<style>
+<style> 
   main {
     background-color: var(--light-theme-bg-color);
-    border: 1px dashed black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,10 +53,4 @@
     border: 1px dashed purple;
   }
 
-  .themeButtonCont {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    display: flex;
-  }
 </style>

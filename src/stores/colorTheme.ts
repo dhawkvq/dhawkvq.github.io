@@ -10,4 +10,4 @@ function createLightDarkTheme(){
   };
 }
 
-export const lightDarkTheme = createLightDarkTheme(); 
+export const colorTheme = createLightDarkTheme(); 

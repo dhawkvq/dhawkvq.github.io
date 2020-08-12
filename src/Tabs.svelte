@@ -1,20 +1,22 @@
 <script lang='ts'>
-  let active:string = 'about';
+
+  export let activeTab: string
+  export let setActive: (arg:string) => string
+  
+  let buttons = ['about', 'projects', 'contact' ]
+  const capatilize = (arg:string) => `${arg[0].toUpperCase()}${arg.slice(1)}`
 </script>
 
+
 <div class='cont'>
-  <h1 
-    class:active="{ active === 'about' }"
-    on:click="{() => active = 'about' }"
-  > About Me </h1>
-  <h1 
-    class:active="{ active === 'projects' }"
-    on:click="{() => active = 'projects' }"
-  > Projects </h1>
-  <h1 
-    class:active="{ active === 'contact' }"
-    on:click="{() => active = 'contact' }"
-  > Contact </h1>
+  {#each buttons as button}
+    <h1 
+      class:active="{ activeTab === button }"
+      on:click="{() => setActive(button) }"
+    > 
+      { button === 'about' ? 'About Me': capatilize(button) } 
+    </h1>
+  {/each}
 </div>
 
 <style>
