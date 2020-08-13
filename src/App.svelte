@@ -15,7 +15,6 @@
   <div class='contentCont'>
     <Tabs {...{activeTab,setActive}} />
      <div class='pageWindow'>
-      active tab is {activeTab}
       {#if activeTab === 'projects'}
         <Projects />
       {:else if activeTab === 'contact'}
