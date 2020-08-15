@@ -1,4 +1,5 @@
 <script lang='ts'>
+  import { SunIcon } from './components'
 
   type themeProps = {
     light: () => void,
@@ -6,15 +7,15 @@
   }
 
   export let theme:themeProps
+  console.log($theme)
 </script>
 
 <div class='themeButtonCont'>
-  <button on:click={theme.light}>
-    Light
-  </button> 
-  <button on:click={theme.dark}>
-    Dark
-  </button>
+  {#if $theme === 'dark'}
+    <SunIcon handleClick={theme.light}/>
+  {:else}
+    <p>Moon</p>
+  {/if}
 </div>
 
 <style>
