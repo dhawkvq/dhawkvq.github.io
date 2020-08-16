@@ -1,12 +1,20 @@
 <script lang='ts'>
   import { scale } from 'svelte/transition'
-  import { quintOut } from 'svelte/easing';
+  type SunProps = {
+    duration: number,
+    start: number
+  } 
+
   export let handleClick: () => void
+  export let scaleProps: SunProps
+
   let fade = false
 </script>
+
 {#if !fade}
   <div on:click={() => fade = true}
-    out:scale='{{ duration: 1000, start: 0, easing: quintOut }}'
+    in:scale='{scaleProps}'
+    out:scale='{scaleProps}'
     on:outroend='{handleClick}'
   >
     <svg viewBox="0 0 515 513" fill='none' stroke='white' xmlns="http://www.w3.org/2000/svg">

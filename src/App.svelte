@@ -35,7 +35,7 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
-    transition: background-color 1s ease;
+    transition: background-color .8s ease;
   }
 
   .light {

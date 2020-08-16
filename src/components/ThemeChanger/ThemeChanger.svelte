@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import { SunIcon } from './components'
+  import { SunIcon, MoonIcon } from './components'
 
   type themeProps = {
     light: () => void,
@@ -7,14 +7,17 @@
   }
 
   export let theme:themeProps
-  console.log($theme)
+  const scaleProps = {
+    duration: 700, 
+    start: 0
+  }
 </script>
 
 <div class='themeButtonCont'>
   {#if $theme === 'dark'}
-    <SunIcon handleClick={theme.light}/>
+    <MoonIcon handleClick={theme.light} {scaleProps}/>
   {:else}
-    <p>Moon</p>
+    <SunIcon handleClick={theme.dark} {scaleProps}/>
   {/if}
 </div>
 
