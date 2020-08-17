@@ -26,9 +26,14 @@
       cursor: pointer;
     }
   }
-
+  
   .light {
-    fill: black;
+    fill: var(--light-fill-color);
+    
+    &:hover {
+      fill: var(--light-social-link);
+      box-shadow: 0 0 10px var(--light-social-link), 0 0 30px var(--light-social-link), 0 0 50px var(--light-social-link);
+    }
   }
 
 </style>

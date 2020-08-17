@@ -1,10 +1,15 @@
 <script lang='ts'>
   export let handleClick: () => void
   export let activeTab: string
+  export let theme:string
 </script>
 
-<div on:click={handleClick} >
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" class:active={activeTab === 'about'} >
+<div 
+  on:click={handleClick} 
+  class:active={activeTab === 'about'}
+  class:light={theme === 'light'}
+>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35"  >
     <g id="g10" transform="matrix(1.25 0 0 -1.25 0 35)">
       <g id="g6008" transform="matrix(.32503 0 0 .32503 -100.86 -132.32)">
         <g id="g5704" transform="translate(362.96 472.25)">
@@ -25,24 +30,32 @@
 <style type='text/scss'>
 
   div{
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
+    fill: var(--dark-fill-color);
+    
+    &.active {
+      fill: var(--dark-active-link);
+    }
+
+  }
+
+  .light {
+    fill:  var(--light-fill-color);
+
+    &.active {
+      fill: var(--light-active-link)
+    }
   }
 
   svg {
-    fill: #6f6c6d;
     border-radius: 10px;
     transition: all 1s ease;
-
 
     &:hover {
       cursor: pointer;
     }
 
-  }
-
-  .active {
-    fill: var(--dark-active-link);
   }
 
 </style>

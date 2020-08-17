@@ -2,29 +2,28 @@
   import { Person, MyWork, ContactMe } from './components'
   export let activeTab: string
   export let setActive: (arg:string) => string
-  
-  // const capatilize = (arg:string) => `${arg[0].toUpperCase()}${arg.slice(1)}`
+  export let theme:string
 </script>
 
 
-<div class='cont'>
+<div class:light={theme === 'light'}>
   <Person 
     handleClick={() => setActive('about')} 
-    {activeTab}
+    {...{theme,activeTab}}
   />
   <MyWork 
     handleClick={() => setActive('projects')} 
-    {activeTab}
+    {...{theme,activeTab}}
   />
   <ContactMe 
     handleClick={() => setActive('contact')} 
-    {activeTab}
+    {...{theme,activeTab}}
   />
 </div>
 
 <style type='text/scss'>
 
-  .cont {
+  div {
     position: absolute;
     left: 10px;
     height: 80%;
@@ -33,7 +32,12 @@
     justify-content: space-around;
     align-items: center;  
     padding-right: 30px;
-    border-right: 2px solid var(--dark-border-color)
+    border-right: 2px solid var(--dark-border-color);
+    transition: all .8s ease;
+
+    &.light {
+      border-right: 2px solid var(--light-border-color);
+    }
   }
 
 </style>

@@ -5,7 +5,11 @@ html, body {
   
   /* Light Theme */
   --light-bg-color: white;
+  --light-fill-color: #676777;
+  --light-border-color: #EAEBED;
   --light-font-color: black;
+  --light-active-link: #EC4F27;
+  --light-social-link: #4CBF99;
   
   /* Dark Theme */
   --dark-bg-color: #1F2430;

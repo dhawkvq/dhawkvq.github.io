@@ -11,7 +11,7 @@
 
 
 <main class:light={$colorTheme === 'light'}>
-  <NavTabs {...{activeTab,setActive}} />
+  <NavTabs {...{activeTab,setActive}} theme={$colorTheme}/>
   <ThemeChanger theme={colorTheme} />
   <div class='contentCont'>
      <div class='pageWindow'>
