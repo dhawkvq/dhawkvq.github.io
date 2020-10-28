@@ -15,7 +15,11 @@
 
 <div class='themeButtonCont'>
   {#if $theme === 'dark'}
-    <MoonIcon handleClick={theme.light} {scaleProps}/>
+    <MoonIcon 
+      handleClick={theme.light} 
+      theme={$theme}
+      {scaleProps}
+    /> 
   {:else}
     <SunIcon handleClick={theme.dark} {scaleProps}/>
   {/if}
