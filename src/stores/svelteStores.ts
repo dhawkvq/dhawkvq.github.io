@@ -11,3 +11,5 @@ function createLightDarkTheme(){
 }
 
 export const colorTheme = createLightDarkTheme(); 
+
+export const currentPath = writable('/')

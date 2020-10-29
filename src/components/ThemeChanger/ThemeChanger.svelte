@@ -13,7 +13,7 @@
   }
 </script>
 
-<div class='themeButtonCont'>
+<div>
   {#if $theme === 'dark'}
     <MoonIcon 
       handleClick={theme.light} 
@@ -24,12 +24,3 @@
     <SunIcon handleClick={theme.dark} {scaleProps}/>
   {/if}
 </div>
-
-<style>
-  .themeButtonCont {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    display: flex;
-  }
-</style>
