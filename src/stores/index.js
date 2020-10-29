@@ -1,1 +1,1 @@
-export { colorTheme, currentPath } from './svelteStores.ts'
+export { colorTheme, currentPath } from './svelteStores'

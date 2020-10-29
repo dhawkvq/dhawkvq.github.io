@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
 function createLightDarkTheme(){
-  const { subscribe, set, update } = writable('dark')
+  const { subscribe, set } = writable('dark')
 
   return {
     subscribe,

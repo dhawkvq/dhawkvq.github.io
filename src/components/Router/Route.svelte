@@ -1,8 +1,8 @@
-<script lang='ts'>
+<script>
   import { getContext } from 'svelte'
   import router from 'page'
-  export let path: string
-  export let component:any
+  export let path
+  export let component
   const currentPath = getContext('currentPath')
   router(path, () => $currentPath = path)
 </script>

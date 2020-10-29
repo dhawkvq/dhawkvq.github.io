@@ -1,22 +1,18 @@
-<script lang='ts'>
+<script>
   import { scale } from 'svelte/transition'
-  type SunProps = {
-    duration: number,
-    start: number
-  } 
-
-  export let handleClick: () => void
-  export let scaleProps: SunProps
-  export let theme: string 
+  
+  export let handleClick
+  export let scaleProps
+  export let theme 
 
   let fade = false
 </script>
 
 {#if !fade}
   <div on:click={() => fade = true}
-    in:scale='{scaleProps}'
-    out:scale='{scaleProps}'
-    on:outroend='{handleClick}'
+    in:scale={scaleProps}
+    out:scale={scaleProps}
+    on:outroend={handleClick}
   >
     <svg viewBox="0 0 515 513" fill='none' stroke={theme === 'dark' ? 'white': 'black'} xmlns="http://www.w3.org/2000/svg">
       <path d="M391.5 255C391.5 329.884 331.233 390.5 257 390.5C182.767 390.5 122.5 329.884 122.5 255C122.5 180.116 182.767 119.5 257 119.5C331.233 119.5 391.5 180.116 391.5 255Z" fill="#F0EC82" stroke="black" stroke-width="15"/>

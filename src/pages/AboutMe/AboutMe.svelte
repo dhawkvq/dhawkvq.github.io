@@ -1,6 +1,6 @@
-<script lang='ts'>
+<script>
   import { GitHubIcon, LinkedInIcon } from './icons'
-  export let theme:string
+  export let theme
 </script>
 
 <div class='aboutCont' class:light={theme === 'light'}>

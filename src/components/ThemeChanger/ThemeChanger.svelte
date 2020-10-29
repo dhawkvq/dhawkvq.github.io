@@ -1,12 +1,7 @@
-<script lang='ts'>
+<script>
   import { SunIcon, MoonIcon } from './components'
 
-  type themeProps = {
-    light: () => void,
-    dark: () => void
-  }
-
-  export let theme:themeProps
+  export let theme
   const scaleProps = {
     duration: 700, 
     start: 0

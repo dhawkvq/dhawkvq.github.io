@@ -1,6 +1,6 @@
-<script lang="ts">
+<script>
   import { colorTheme, currentPath } from './stores'
-  import { ThemeChanger, NavTabs, Router, Route } from './components'
+  import { ThemeChanger, Router, Route } from './components'
   import { AboutMe, Contact, Projects, NotFound } from './pages'
 </script>
 
@@ -19,6 +19,7 @@
       <Route path='/' component={AboutMe} />
       <Route path='/portfolio' component={Projects} />
       <Route path='/contact' component={Contact} />
+      <Route path='/*' component={NotFound} />
     </Router>
   </main>
 </div>
@@ -41,7 +42,7 @@
     flex-direction: column;
     align-items: center;
     height: 100%;
-    transition: background-color .8s ease;
+    transition: background-color .6s ease;
   }
 
   .linkContainer {
@@ -71,7 +72,7 @@
     padding: 10px;
     position: sticky;
     top: 0;
-    transition: background-color .8s ease;
+    transition: background-color .6s ease;
   }
 
   .light {

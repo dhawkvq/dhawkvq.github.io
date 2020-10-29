@@ -1,21 +1,17 @@
-<script lang='ts'>
+<script>
   import { scale } from 'svelte/transition'
-  type MoonProps = {
-    duration: number,
-    start: number
-  } 
 
-  export let handleClick: () => void
-  export let scaleProps: MoonProps
+  export let handleClick
+  export let scaleProps
   
   let fade = false
 </script>
 
 {#if !fade}
   <div on:click={() => fade = true}
-    in:scale='{scaleProps}'
-    out:scale='{scaleProps}'
-    on:outroend='{handleClick}'
+    in:scale={scaleProps}
+    out:scale={scaleProps}
+    on:outroend={handleClick}
   >
     <svg viewBox="0 0 514 521" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M342.5 207C342.5 187 365.167 176.333 376.5 173.5C354.416 170.788 344.935 150.657 342.695 140.005C337.651 163.609 317.797 172.17 308.5 173.5C331.3 177.5 340.667 197.5 342.5 207Z" fill="#EDDB37"/>

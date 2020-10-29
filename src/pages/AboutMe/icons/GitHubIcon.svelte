@@ -1,7 +1,7 @@
-<script lang='ts'>
-  export let height:string = '24'
-  export let width:string = '24'
-  export let theme:string
+<script>
+  export let height = '24'
+  export let width = '24'
+  export let theme
 </script>
 
 <div style={`height:${height}px; width:${width}px; margin:5px;`}>
